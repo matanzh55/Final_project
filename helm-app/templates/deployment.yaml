@@ -1,0 +1,21 @@
+# deployment.yaml for My App
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: py-app  # Use a static name for debugging
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: py-app
+  template:
+    metadata:
+      labels:
+        app: py-app
+    spec:
+      containers:
+        - name: py-app
+          image: matanzh/web-app:latest  # Updated image to matanzh/web-app:latest
+          ports:
+            - containerPort: 5000
