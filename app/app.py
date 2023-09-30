@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from pymongo import MongoClient
+from werkzeug.urls import url_quote
 
 app = Flask(__name__)
 
