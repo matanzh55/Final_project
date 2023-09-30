@@ -3,19 +3,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: py-app  # Use a static name for debugging
+  name: matan-app  # Use a static name for debugging
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: py-app
+      app: matan-app
   template:
     metadata:
       labels:
-        app: py-app
+        app: matan-app
     spec:
       containers:
-        - name: py-app
+        - name: matan-app
           image: matanzh/web-app:latest  # Updated image to matanzh/web-app:latest
           ports:
             - containerPort: 5000
